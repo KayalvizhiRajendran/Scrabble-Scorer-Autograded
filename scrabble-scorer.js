@@ -50,7 +50,7 @@ let scrabbleScorer = {
    name:"New Scrable Scorer",
    Description : "Created function",
    scoringFunction: function(word){
-      let letters = word.split("");
+      let letters = word.toLowerCase().split("");
       let score = 0;
       for (let index = 0; index < letters.length; index++) {
             let element =letters[index];
@@ -92,6 +92,9 @@ const scoringAlgorithms = [ simpleScorer, vowelBonusScorer,scrabbleScorer];
 
 function scorerPrompt() {
    let scoringMethod = input.question("Which scoring algorithm would you like to use? \n 0 - Simple: One point per character \n 1 - Vowel Bonus: Vowels are worth 3 points \n 2 - Scrabble: Uses scrabble point system \n Enter 0, 1, or 2: ");
+   while(scoringMethod != "0" && scoringMethod != "1" && scoringMethod != "2"){
+      scoringMethod = input.question("Please enter a valid scoring choice..!! \n \n 0 - Simple: One point per character \n 1 - Vowel Bonus: Vowels are worth 3 points \n 2 - Scrabble: Uses scrabble point system \n Enter 0, 1, or 2: ")
+   }
    return scoringAlgorithms[scoringMethod];
 }
 
