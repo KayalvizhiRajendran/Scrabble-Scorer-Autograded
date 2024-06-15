@@ -122,9 +122,9 @@ function runProgram() {
    newPointStructure = transform(oldPointStructure);
    //console.log(newPointStructure);
    let scoringMethod = scorerPrompt();
-   console.log(`The score for ${word} is ${scoringMethod.scoringFunction(word)}`);
+   console.log(`The score for '${word}' is ${scoringMethod.scoringFunction(word)}`);
    //console.log("Algorithm name: ", scoringMethod.name);
-   console.log("Algorithm results: ",scoringMethod.scoringFunction(word) );
+  // console.log("Algorithm results: ",scoringMethod.scoringFunction(word) );
 }
 
 // Don't write any code below this line //
