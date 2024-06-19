@@ -35,9 +35,10 @@ let oldScrabbleScorer = {
 
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
-let word;
+
 function initialPrompt() {
-   word = input.question("Let's play some scrabble! Enter a word:");
+   let word = input.question("Let's play some scrabble! Enter a word:");
+   return word;
    //console.log(oldScrabbleScorer(word));
    //console.log(simpleScorer(word));
    //console.log(vowelBonusScorer(word));
@@ -121,7 +122,7 @@ let scorerPrompt = function () {
 }
 
 function runProgram() {
-   initialPrompt();
+   let word = initialPrompt();
    let scoringMethod = scorerPrompt();
    console.log(`The score for '${word}' is ${scoringMethod.scorerFunction(word, this.newPointStructure)}`);
    //console.log(this.newPointStructure);
